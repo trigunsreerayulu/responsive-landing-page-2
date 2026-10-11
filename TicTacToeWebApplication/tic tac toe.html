@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#edf1e9">
+    <title>Threefold - Tic-Tac-Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="topbar">
+            <a class="brand" href="#main" aria-label="Threefold game home">
+                <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span>THREEFOLD<span class="brand-period">.</span></span>
+            </a>
+            <span class="topbar-note">A LITTLE FRIENDLY COMPETITION</span>
+        </header>
+
+        <main id="main" class="game-layout">
+            <section class="game-area" aria-labelledby="page-title">
+                <div class="game-heading">
+                    <div>
+                        <p class="eyebrow">THE CLASSIC, REIMAGINED</p>
+                        <h1 id="page-title">Tic-Tac-Toe</h1>
+                    </div>
+                    <div class="mode-switch" role="group" aria-label="Choose game mode">
+                        <button class="mode-button is-selected" id="twoPlayerMode" type="button" aria-pressed="true">2 players</button>
+                        <button class="mode-button" id="computerMode" type="button" aria-pressed="false">vs computer</button>
+                    </div>
+                </div>
+
+                <div class="turn-banner" aria-live="polite" aria-atomic="true">
+                    <span class="turn-symbol" id="turnSymbol" aria-hidden="true">X</span>
+                    <span id="gameStatus">X's turn</span>
+                    <span class="turn-tag" id="turnTag">PLAYER 1</span>
+                </div>
+
+                <div class="board-wrap">
+                    <div class="board" id="gameBoard" role="group" aria-label="Tic-Tac-Toe game board">
+                        <button class="cell" type="button" data-cell="0" aria-label="Row 1, column 1, empty"></button>
+                        <button class="cell" type="button" data-cell="1" aria-label="Row 1, column 2, empty"></button>
+                        <button class="cell" type="button" data-cell="2" aria-label="Row 1, column 3, empty"></button>
+                        <button class="cell" type="button" data-cell="3" aria-label="Row 2, column 1, empty"></button>
+                        <button class="cell" type="button" data-cell="4" aria-label="Row 2, column 2, empty"></button>
+                        <button class="cell" type="button" data-cell="5" aria-label="Row 2, column 3, empty"></button>
+                        <button class="cell" type="button" data-cell="6" aria-label="Row 3, column 1, empty"></button>
+                        <button class="cell" type="button" data-cell="7" aria-label="Row 3, column 2, empty"></button>
+                        <button class="cell" type="button" data-cell="8" aria-label="Row 3, column 3, empty"></button>
+                    </div>
+                    <span class="board-caption" aria-hidden="true">THREE IN A ROW WINS</span>
+                </div>
+
+                <div class="game-actions">
+                    <button class="action-button action-primary" id="newGameButton" type="button">
+                        <span aria-hidden="true">↻</span> New game
+                    </button>
+                    <button class="action-button action-secondary" id="resetButton" type="button">
+                        <span aria-hidden="true">⟲</span> Reset scores
+                    </button>
+                </div>
+            </section>
+
+            <aside class="score-panel" aria-labelledby="score-title">
+                <div class="score-heading">
+                    <p class="eyebrow">THIS SESSION</p>
+                    <h2 id="score-title">Scoreboard</h2>
+                </div>
+
+                <div class="score-list" aria-live="polite" aria-atomic="true">
+                    <div class="score-row">
+                        <span class="player-badge mark-x">X</span>
+                        <span class="player-name" id="playerXName">Player 1</span>
+                        <span class="score-value" id="scoreX">0</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="player-badge mark-o">O</span>
+                        <span class="player-name" id="playerOName">Player 2</span>
+                        <span class="score-value" id="scoreO">0</span>
+                    </div>
+                    <div class="score-row draws-row">
+                        <span class="draw-mark" aria-hidden="true">=</span>
+                        <span class="player-name">Draws</span>
+                        <span class="score-value" id="scoreDraws">0</span>
+                    </div>
+                </div>
+
+                <div class="panel-note">
+                    <span class="note-mark" aria-hidden="true">✳</span>
+                    <p id="modeNote">Pass the board back and forth. X takes the first move.</p>
+                </div>
+                <p class="round-count" id="roundCount">ROUND 01</p>
+            </aside>
+        </main>
+
+        <footer class="page-footer"><span>THREEFOLD / 01</span><span>PLAY ANOTHER ROUND?</span></footer>
+    </div>
+</body>
+</html>
